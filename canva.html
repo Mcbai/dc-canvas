@@ -81,7 +81,7 @@
 </head>
 <body>
 	<div id="dccanva"></div>
-
+	<button id="btn">生成图片</button>
 	<script src="./canva.js"></script>
 
 	<script>
@@ -89,7 +89,9 @@
 			el: 'dccanva'
 		})
 		canvaInstance.addBgImg('timg.jpg')
-		
+		document.getElementById('btn').onclick = function () {
+			canvaInstance.generateImg()
+		}
 	</script>
 </body>
 </html>

@@ -220,8 +220,15 @@ var Canva = (function () {
 						item.classList.remove('tool-item-active')
 					})
 
-					that.activeToolName = this.dataset.name
-					that.draw()
+					if (this.dataset.name === 'repeal') {
+						if (that.arr.length > 1) {
+							that.arr.pop()
+							that.ctx.putImageData(that.arr[that.arr.length-1],0,0,0,0,that.canvasWidth,that.canvasHeight);							
+						}
+					} else {
+						that.activeToolName = this.dataset.name
+						that.draw()						
+					}
 				}
 			})
 		},
@@ -236,6 +243,9 @@ var Canva = (function () {
 				ctx.drawImage(img, 0, 0, that.canvasWidth,that.canvasHeight)
 				that.arr.push(ctx.getImageData(0,0,that.canvasWidth,that.canvasHeight))
 			}
+		},
+		generateImg: function () {
+			return this.canvas.toDataURL('image/jpeg', 1)
 		}
 	}
 
