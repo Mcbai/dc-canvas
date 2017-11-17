@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>canva</title>
+	<style>
+		#dccanva {
+			width: 500px;
+			height: 525px;
+		}
+		#dccanva-toolbar {
+			box-sizing: border-box;
+			display: flex;
+		    width: 500px;
+		    height: 25px;
+		    border: 1px solid #ccc;
+			line-height: 23px;
+		    text-align: center;
+		}
+		.tool-style {
+			flex: 1;
+			min-width: 50px;
+			border-right: 1px solid #ccc;
+			font-size: 0;
+		}
+		.tool-style:hover {
+			background-color: #eee;
+		}
+		.input-color {
+			border: 0;
+		}
+		.input-linewidth {
+			width: 40px;
+			height: 23px;
+			padding: 0;
+			border: 0;
+		    vertical-align: middle;
+		}
+		.tool-item {
+			flex: 1;
+		    background-color: #f8f8f8;
+			border-right: 1px solid #ccc;
+			cursor: pointer;
+		}
+		.tool-item:last-child {
+			border: 0
+		}
+		.tool-item:hover {
+			background-color: #eee;
+		}
+		.tool-item-active {
+			background-color: #ccc;
+		}
+		.tool-item-active:hover {
+			background-color: #ccc;
+		}
+		.free::after {
+			content: '\270E';
+		}
+		.point::after {
+			content: '\25CF';
+		}
+		.line::after {
+			content: '\2500';
+		}
+		.circle::after {
+			content: '\25EF';
+		}
+		.rect::after {
+			content: '\25AD';
+		}
+		.repeal::after {
+			content: '\23F4';
+		}
+
+		#dccanva-canvas{
+			box-sizing: border-box;
+			border: 1px solid #ccc;
+		}
+	</style>
+</head>
+<body>
+	<div id="dccanva"></div>
+
+	<script src="./canva.js"></script>
+
+	<script>
+		var canvaInstance = new Canva({
+			el: 'dccanva'
+		})
+		canvaInstance.addBgImg('timg.jpg')
+		
+	</script>
+</body>
+</html>
